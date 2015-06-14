@@ -378,7 +378,8 @@ class Jewel(Widget):
 
     def on_complete(self, *args):
         self.animating = False
-        self.board.check(self)
+        if self.board:
+            self.board.check(self)
 
     def stop(self):
         if self.anim:
